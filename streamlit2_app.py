@@ -23,5 +23,5 @@ import streamlit as st
 
 st.title("🎈 Welcome to REGEX generator")
 st.write(
-    "We can generate any REGEX from your condition using AI ! Try Now!."
+    "We can generate any REGEX from your conditions using AI ! Try Now!."
 )
