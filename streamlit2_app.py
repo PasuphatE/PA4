@@ -1,5 +1,5 @@
 import streamlit as st
-
+'''
 st.title("🎈 My new app")
 st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
@@ -21,3 +21,9 @@ with tab2:
 with tab3:
     st.header("An owl")
     st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
+'''
+
+st.title("🎈 Welcome to REGEX generator")
+st.write(
+    "We can generate any REGEX from your condition using AI ! Try Now!."
+)
