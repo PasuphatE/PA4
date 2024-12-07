@@ -1,6 +1,3 @@
-pip install openai streamlit wordcloud matplotlib
-
-
 import streamlit as st
 import openai
 from wordcloud import WordCloud
