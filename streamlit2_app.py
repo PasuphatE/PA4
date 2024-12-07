@@ -25,5 +25,27 @@ st.title("🎈 Welcome to WordCloud generator ☁️")
 st.write(
     "We can generate any WordCloud from your conditions using AI! Try Now!"
 )
-title = st.text_input("Movie title", "Life of Brian")
-st.write("Input your text", title)
+# ฟังก์ชันสร้าง Word Cloud
+def generate_wordcloud(text):
+    wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
+    return wordcloud
+
+    # กล่องข้อความสำหรับผู้ใช้ใส่ข้อมูล
+    user_input = st.text_area("ใส่ข้อความที่นี่", "Streamlit is awesome! Word Cloud is fun!")
+
+    # ปุ่มสำหรับสร้าง Word Cloud
+    if st.button("Generate Word Cloud"):
+        if user_input:
+            # สร้าง Word Cloud
+            wordcloud = generate_wordcloud(user_input)
+            
+            # แสดงผล Word Cloud โดยใช้ Matplotlib
+            fig, ax = plt.subplots()
+            ax.imshow(wordcloud, interpolation='bilinear')
+            ax.axis("off")
+            st.pyplot(fig)  # แสดงผลใน Streamlit
+        else:
+            st.warning("กรุณาใส่ข้อความก่อนสร้าง Word Cloud!")
+
+if __name__ == "__main__":
+    main()
