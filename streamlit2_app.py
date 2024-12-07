@@ -39,7 +39,7 @@ def get_chatgpt_response(prompt):
     max_tokens=500
 )
 
-        return response.choices[0].message["content"].strip()
+        return response['choices'][0]['message']['content'].strip()
     except Exception as e:
         return f"Error: {str(e)}"
 
