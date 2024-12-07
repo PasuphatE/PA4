@@ -21,7 +21,9 @@ import streamlit as st
 #    st.header("An owl")
 #    st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
 
-st.title("🎈 Welcome to REGEX generator")
+st.title("🎈 Welcome to WordCloud generator ☁️")
 st.write(
-    "We can generate any REGEX from your conditions using AI ! Try Now!."
+    "We can generate any WordCloud from your conditions using AI! Try Now!"
 )
+title = st.text_input("Movie title", "Life of Brian")
+st.write("Input your text", title)
