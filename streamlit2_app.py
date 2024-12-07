@@ -1,10 +1,10 @@
 import openai
 import streamlit as st
 import pandas as pd
-from openai import OpenAI
-client = OpenAI(api_key = "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")
 from wordcloud import WordCloud,STOPWORDS
 import matplotlib.pyplot as plt
+
+openai.api_key = "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"
 
 #st.title("🎈 My new app")
 #st.write(
@@ -30,7 +30,7 @@ import matplotlib.pyplot as plt
 
 def get_chatgpt_response(prompt):
     try:
-        response = openai.ChatCompletion.chat(
+        response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
