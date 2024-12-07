@@ -1,6 +1,8 @@
+import openai
 import streamlit as st
 import pandas as pd
-import openai
+from openai import OpenAI
+client = OpenAI(api_key = "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")
 from wordcloud import WordCloud,STOPWORDS
 import matplotlib.pyplot as plt
 
@@ -25,18 +27,18 @@ import matplotlib.pyplot as plt
 #    st.header("An owl")
 #    st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
 
-openai.api_key = "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"
 
 def get_chatgpt_response(prompt):
     try:
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",  
-            messages=[
-                {"role": "system", "content": "You are a helpful assistant."},
-                {"role": "user", "content": prompt}
-            ],
-            max_tokens=500  
-        )
+        response = openai.ChatCompletion.chat(
+    model="gpt-3.5-turbo",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": prompt}
+    ],
+    max_tokens=500
+)
+
         return response.choices[0].message["content"].strip()
     except Exception as e:
         return f"Error: {str(e)}"
