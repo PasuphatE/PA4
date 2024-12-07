@@ -29,19 +29,6 @@ st.write(
     # กล่องข้อความสำหรับผู้ใช้ใส่ข้อมูล
     user_input = st.text_area("ใส่ข้อความที่นี่", "Streamlit is awesome! Word Cloud is fun!")
 
-    # ปุ่มสำหรับสร้าง Word Cloud
-    if st.button("Generate Word Cloud"):
-        if user_input:
-            # สร้าง Word Cloud
-            wordcloud = generate_wordcloud(user_input)
-            
-            # แสดงผล Word Cloud โดยใช้ Matplotlib
-            fig, ax = plt.subplots()
-            ax.imshow(wordcloud, interpolation='bilinear')
-            ax.axis("off")
-            st.pyplot(fig)  # แสดงผลใน Streamlit
-        else:
-            st.warning("กรุณาใส่ข้อความก่อนสร้าง Word Cloud!")
 
 if __name__ == "__main__":
     main()
