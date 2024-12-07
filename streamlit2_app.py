@@ -1,10 +1,8 @@
 import streamlit as st
 import pandas as pd
 import openai
-from wordcloud import WordCloud, STOPWORD
+from wordcloud import WordCloud,STOPWORDS
 import matplotlib.pyplot as plt
-
-
 
 #st.title("🎈 My new app")
 #st.write(
