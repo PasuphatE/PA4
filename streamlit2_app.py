@@ -29,5 +29,3 @@ st.write(
 user_input = st.text_area("Input your text here.", "Streamlit is awesome! Word Cloud is fun!")
 
 
-if __name__ == "__main__":
-    main()
