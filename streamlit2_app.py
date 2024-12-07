@@ -25,10 +25,6 @@ st.title("🎈 Welcome to WordCloud generator ☁️")
 st.write(
     "We can generate any WordCloud from your conditions using AI! Try Now!"
 )
-# ฟังก์ชันสร้าง Word Cloud
-def generate_wordcloud(text):
-    wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
-    return wordcloud
 
     # กล่องข้อความสำหรับผู้ใช้ใส่ข้อมูล
     user_input = st.text_area("ใส่ข้อความที่นี่", "Streamlit is awesome! Word Cloud is fun!")
