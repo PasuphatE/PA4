@@ -1,7 +1,8 @@
 import streamlit as st
 import openai
-from wordcloud import WordCloud
 import matplotlib.pyplot as plt
+from wordcloud import WordCloud
+
 
 #st.title("🎈 My new app")
 #st.write(
@@ -53,27 +54,27 @@ def main():
 
 
     # ปุ่มส่งข้อความไปยัง ChatGPT
-    if st.button("สร้าง Word Cloud"):
+    if st.button("Create Word Cloud"):
         if user_prompt:
-            with st.spinner("กำลังประมวลผลคำตอบจาก ChatGPT..."):
+            with st.spinner("ChatGPT is calculating..."):
                 # เรียก ChatGPT เพื่อให้ตอบข้อความกลับมา
                 response_text = get_chatgpt_response(user_prompt)
                 
                 # แสดงข้อความที่ได้จาก ChatGPT
-                st.subheader("คำตอบจาก ChatGPT:")
+                st.subheader("ChatGPT's response:")
                 st.write(response_text)
 
                 # สร้าง Word Cloud จากคำตอบของ ChatGPT
                 wordcloud = generate_wordcloud(response_text)
                 
                 # แสดง Word Cloud โดยใช้ Matplotlib
-                st.subheader("Word Cloud จากคำตอบ:")
+                st.subheader("Word Cloud from your text:")
                 fig, ax = plt.subplots()
                 ax.imshow(wordcloud, interpolation="bilinear")
                 ax.axis("off")
                 st.pyplot(fig)  # แสดงผลลัพธ์ใน Streamlit
         else:
-            st.warning("กรุณาใส่ข้อความหรือคำถามก่อน!")
+            st.warning("please input text!")
 
 if __name__ == "__main__":
     main()
