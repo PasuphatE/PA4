@@ -4,7 +4,7 @@ import pandas as pd
 from wordcloud import WordCloud,STOPWORDS
 import matplotlib.pyplot as plt
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 #st.title("🎈 My new app")
 #st.write(
