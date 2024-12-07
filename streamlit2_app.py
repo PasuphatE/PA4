@@ -24,7 +24,7 @@ import matplotlib.pyplot as plt
 #    st.header("An owl")
 #    st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
 
-openai.api_key = "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"
+import openai.api_key = "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"
 
 def get_chatgpt_response(prompt):
     try:
