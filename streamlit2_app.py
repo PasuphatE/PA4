@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 
 openai.api_key = "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"
 
-
+# ฟังก์ชันเรียกใช้งาน ChatGPT
 def get_chatgpt_response(prompt):
     try:
         response = openai.ChatCompletion.create(
@@ -45,13 +45,14 @@ def get_chatgpt_response(prompt):
 def generate_wordcloud(text):
     wordcloud = WordCloud(width=800, height=400, background_color="white").generate(text)
     return wordcloud
-    
+
+# UI หลักของ Streamlit
 def main():
-    st.title("🎈 Welcome to WordCloud generator ☁️")
-    st.write("We can generate any WordCloud from your conditions using AI! Try Now!")
+    st.title("ChatGPT Word Cloud Generator")
+    st.write("ส่งคำถามไปยัง ChatGPT และสร้าง Word Cloud จากคำตอบที่ได้")
 
-    user_prompt = st.text_area("Input your text here.", "Streamlit is awesome! Word Cloud is fun!")
-
+    # ช่องให้ผู้ใช้งานพิมพ์คำถาม
+    user_prompt = st.text_area("ใส่ข้อความหรือคำถามที่คุณต้องการให้ ChatGPT ตอบกลับ:", "บอกข้อมูลเกี่ยวกับเทคโนโลยี AI")
 
     # ปุ่มส่งข้อความไปยัง ChatGPT
     if st.button("สร้าง Word Cloud"):
