@@ -50,7 +50,7 @@ def main():
     st.title("🎈 Welcome to WordCloud generator ☁️")
     st.write("We can generate any WordCloud from your conditions using AI! Try Now!")
 
-    user_input = st.text_area("Input your text here.", "Streamlit is awesome! Word Cloud is fun!")
+    user_prompt = st.text_area("Input your text here.", "Streamlit is awesome! Word Cloud is fun!")
 
 
     # ปุ่มส่งข้อความไปยัง ChatGPT
