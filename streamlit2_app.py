@@ -120,10 +120,8 @@ if yrText.strip() != "":
    
     # นับความถี่ของคำ
     word_count = Counter(word_count2)
-    # เรียงคำตามความถี่จากมากไปน้อย
-    #sorted_word_dict = dict(word_count.most_common())
-    sorted_word_dict = {k: v for k, v in word_count.items() if k.strip()}
     sorted_word_dict = dict(word_count.most_common())
+
 
 #st.write(obj_tokenized)
 #st.write(obj_tokenized_no_stop_words)
