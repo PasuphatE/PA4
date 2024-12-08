@@ -4,29 +4,20 @@ import pandas as pd
 from wordcloud import WordCloud,STOPWORDS
 import matplotlib.pyplot as plt
 
-openai.api_key = "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"
-
-#st.title("🎈 My new app")
-#st.write(
-#    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-#)
-#a=2+8
-#st.write(
-#    a
-#)
-#
-#tab1, tab2, tab3 = st.tabs(["Cat", "Dog", "Owl"])
-#
-#with tab1:
-#    st.header("A cat")
-#    st.image("https://static.streamlit.io/examples/cat.jpg", width=200)
-#with tab2:
-#    st.header("A dog")
-#    st.image("https://static.streamlit.io/examples/dog.jpg", width=200)
-#with tab3:
-#    st.header("An owl")
-#    st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
-
+key=""
+with st.sidebar:
+    st.title("🎈 Input Your OpenAI API Key 🎈")
+    title = st.text_input("Type your key here", key,type="password")
+    key=title
+    if key=="":
+        Currkey="None"
+    else:
+        Currkey=key
+    if len(Currkey)>10:
+        showKey=Currkey[0:4]+"..."+Currkey[-4:]
+    else:
+        showKey=Currkey
+    st.write("Your current key:<br> ", showKey)
 
 def get_chatgpt_response(prompt):
     try:
