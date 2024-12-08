@@ -127,7 +127,7 @@ if yrText.strip() != "":
 
 #st.write(obj_tokenized)
 #st.write(obj_tokenized_no_stop_words)
-st.html(
+st.markdown(
     "<p><u><b>Word count details</b></u></p>"
 )
 #st.write(f"Word count details:")
@@ -147,6 +147,11 @@ wordcloud = WordCloud(
         background_color='white',
         colormap='viridis',
 ).generate_from_frequencies(sorted_word_dict)
+
+fig, ax = plt.subplots(figsize=(10, 5))
+ax.imshow(wordcloud, interpolation="bilinear")
+ax.axis("off")
+st.pyplot(fig)
 
     # แสดงผล Word Cloud
 fig, ax = plt.subplots(figsize=(10, 5))
