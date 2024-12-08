@@ -146,7 +146,7 @@ wordcloud = WordCloud(
         height=400,
         background_color='white',
         colormap='viridis',
-    ).generate_from_frequencies(sorted_word_dict)
+).generate_from_frequencies(sorted_word_dict)
 
     # แสดงผล Word Cloud
 fig, ax = plt.subplots(figsize=(10, 5))
