@@ -181,3 +181,5 @@ if st.button("Download word counts (.xlsx)"):
             file_name=f"{file_name}.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
         )
+
+st.write("Power by Pasuphat Earakskul, Surasak Kao-iean")
