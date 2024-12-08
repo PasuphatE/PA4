@@ -34,9 +34,9 @@ def get_chatgpt_response(prompt):
     except Exception as e:
         return f"Error: {str(e)}"
 
-def generate_wordcloud(text):
-    wordcloud = WordCloud(width=800, height=400, background_color="white").generate(text)
-    return wordcloud
+#def generate_wordcloud(text):
+#    wordcloud = WordCloud(width=800, height=400, background_color="white").generate(text)
+#    return wordcloud
     
 def main():
     st.title("🎈 Welcome to WordCloud generator ☁️")
