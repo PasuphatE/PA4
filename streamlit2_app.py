@@ -128,7 +128,7 @@ if yrText.strip() != "":
 #st.write(obj_tokenized)
 #st.write(obj_tokenized_no_stop_words)
 st.markdown(
-    "<p><u><b>Word count details</b></u></p>"
+    "<p><u><b>Word count details</b></u></p>",
     unsafe_allow_html=True
 )
     
