@@ -16,7 +16,7 @@ with st.sidebar:
    #     showKey=Currkey
    # st.write("Your current key:<br> ", showKey)
 
-    if api_key:
+    if key:
         try:
             # เรียกใช้ API
             client = openai.OpenAI(api_key=api_key)
