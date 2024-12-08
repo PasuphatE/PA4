@@ -19,6 +19,7 @@ st.title("🎈 Welcome to Word Cloud Generator 🎈")
 st.write(
     "This application will help you to create your own world cloud"
 )
+st.write("Power by Pasuphat Earakskul, Surasak Kao-iean")
     
 #messages = st.container(height=300)
 #if prompt := st.chat_input("Type some text here"):
@@ -182,4 +183,4 @@ if st.button("Download word counts (.xlsx)"):
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
         )
 
-    st.write("Power by Pasuphat Earakskul, Surasak Kao-iean")
+
