@@ -17,22 +17,22 @@ with st.sidebar:
    # st.write("Your current key:<br> ", showKey)
 
     if api_key:
-    try:
-        # เรียกใช้ API
-        client = openai.OpenAI(api_key=api_key)
-        response = client.chat.completions.create(
-            model="gpt-4",  # หรือ gpt-3.5-turbo ตามที่ต้องการ
-            messages=[
-                {"role": "system", "content": "You are a helpful assistant."},
-                {"role": "user", "content": "Who won the world series in 2020?"}
-            ]
-        )
-        st.write("Response:", response.choices[0].message.content)
+        try:
+            # เรียกใช้ API
+            client = openai.OpenAI(api_key=api_key)
+            response = client.chat.completions.create(
+                model="gpt-4",  # หรือ gpt-3.5-turbo ตามที่ต้องการ
+                messages=[
+                    {"role": "system", "content": "You are a helpful assistant."},
+                    {"role": "user", "content": "Who won the world series in 2020?"}
+                ]
+            )
+            st.write("Response:", response.choices[0].message.content)
 
-    except Exception as e:
-        st.error(f"Error: {e}")
-else:
-    st.warning("Please enter your OpenAI API Key.")
+        except Exception as e:
+            st.error(f"Error: {e}")
+    else:
+        st.warning("Please enter your OpenAI API Key.")
     
 st.title("🎈 Welcome to Word Cloud Generator 🎈")
 st.write(
