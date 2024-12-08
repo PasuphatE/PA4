@@ -43,20 +43,20 @@ st.html(
 )
 st.write(yrTextshow)
 ######OpenAI
-#import openai
-#client = openai.OpenAI(api_key=Currkey)
-#messages_so_far = [
-#    {"role": "system", "content": "You are a helpful assistant."},
-#    {"role": "user", "content": "Who won the world series in 2020?"},
-#    {"role": "assistant", "content": "The Los Angeles Dodgers won the World Series in 2020."},
-#    {"role": "user", "content": "Where was it played?"}
-#  ]
-#response = client.chat.completions.create(
-#  model="gpt-4o-mini",
-#  messages=messages_so_far
-#)
-#st.write(f"Respond:\n{response}")
-#st.write(f"\nRespond[0]:\n{response.choices[0].message.content}")
+import openai
+client = openai.OpenAI(api_key=Currkey)
+messages_so_far = [
+    {"role": "system", "content": "You are a helpful assistant."},
+    {"role": "user", "content": "Who won the world series in 2020?"},
+    {"role": "assistant", "content": "The Los Angeles Dodgers won the World Series in 2020."},
+    {"role": "user", "content": "Where was it played?"}
+  ]
+response = client.chat.completions.create(
+  model="gpt-4o-mini",
+  messages=messages_so_far
+)
+st.write(f"Respond:\n{response}")
+st.write(f"\nRespond[0]:\n{response.choices[0].message.content}")
 
 import nltk
 import pythainlp
