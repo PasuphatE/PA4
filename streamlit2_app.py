@@ -139,6 +139,8 @@ word_freq = sorted_word_dict
 # รวมคำจากลิสต์เป็นสตริงเดียว (เว้นวรรคแต่ละคำ)
 text = " ".join(word for word in word_list if word.strip())
 # สร้าง WordCloud โดยกำหนด path ฟอนต์ภาษาไทย
+sorted_word_dict = dict(sorted(word_dict.items(), key=lambda x: x[1], reverse=True))
+
 wordcloud = WordCloud(
         font_path=FONT_PATH,  # ระบุเส้นทางฟอนต์
         width=800,
