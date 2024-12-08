@@ -44,7 +44,7 @@ def main():
 
     user_prompt = st.text_area("Input your text here.", "Streamlit is awesome! Word Cloud is fun!")
 
-    st.write("Power by Pasuphat Earakskul, Surasak Kao-iean")
+    st.write("Powerred by Pasuphat Earakskul & Surasak Kao-iean")
 
 
     if st.button("Create Word Cloud"):
