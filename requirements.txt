@@ -1,4 +1,8 @@
 streamlit
 openai
-langchain
+nltk
+pythainlp
+attacut
 wordcloud
+xlsxwriter
+openpyxl
