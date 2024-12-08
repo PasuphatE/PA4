@@ -6,16 +6,34 @@ with st.sidebar:
     st.title("🎈 Input Your OpenAI API Key 🎈")
     title = st.text_input("Type your key here", key,type="password")
     key=title
-    if key=="":
-        Currkey="None"
-    else:
-        Currkey=key
-    if len(Currkey)>10:
-        showKey=Currkey[0:4]+"..."+Currkey[-4:]
-    else:
-        showKey=Currkey
-    st.write("Your current key:<br> ", showKey)
+   # if key=="":
+   #     Currkey="None"
+   # else:
+   #     Currkey=key
+   # if len(Currkey)>10:
+   #     showKey=Currkey[0:4]+"..."+Currkey[-4:]
+   # else:
+   #     showKey=Currkey
+   # st.write("Your current key:<br> ", showKey)
 
+    if api_key:
+    try:
+        # เรียกใช้ API
+        client = openai.OpenAI(api_key=api_key)
+        response = client.chat.completions.create(
+            model="gpt-4",  # หรือ gpt-3.5-turbo ตามที่ต้องการ
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": "Who won the world series in 2020?"}
+            ]
+        )
+        st.write("Response:", response.choices[0].message.content)
+
+    except Exception as e:
+        st.error(f"Error: {e}")
+else:
+    st.warning("Please enter your OpenAI API Key.")
+    
 st.title("🎈 Welcome to Word Cloud Generator 🎈")
 st.write(
     "This application will help you to create your own world cloud"
@@ -44,20 +62,19 @@ st.html(
 )
 st.write(yrTextshow)
 ######OpenAI
-import openai
 
-client = openai.OpenAI(api_key=Currkey)
-messages_so_far = [
-    {"role": "system", "content": "You are a helpful assistant."},
-    {"role": "user", "content": "Who won the world series in 2020?"},
-    {"role": "assistant", "content": "The Los Angeles Dodgers won the World Series in 2020."},
-    {"role": "user", "content": "Where was it played?"}
-]
-response = client.chat.completions.create(
-  model="gpt-4o-mini",
-  messages=messages_so_far
-)
-st.write(f"\nRespond[0]:\n{response.choices[0].message.content}")
+#client = openai.OpenAI(api_key=Currkey)
+#messages_so_far = [
+#    {"role": "system", "content": "You are a helpful assistant."},
+#    {"role": "user", "content": "Who won the world series in 2020?"},
+#    {"role": "assistant", "content": "The Los Angeles Dodgers won the World Series in 2020."},
+#    {"role": "user", "content": "Where was it played?"}
+#]
+#response = client.chat.completions.create(
+#  model="gpt-4o-mini",
+#  messages=messages_so_far
+#)
+#st.write(f"\nRespond[0]:\n{response.choices[0].message.content}")
 
 import nltk
 import pythainlp
