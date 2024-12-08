@@ -38,7 +38,7 @@ st.title("🎈 Welcome to Word Cloud Generator 🎈")
 st.write(
     "This application will help you to create your own world cloud"
 )
-st.write("Power by Pasuphat Earakskul, Surasak Kao-iean")
+st.write("Powerred by Pasuphat Earakskul & Surasak Kao-iean")
     
 #messages = st.container(height=300)
 #if prompt := st.chat_input("Type some text here"):
