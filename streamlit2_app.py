@@ -148,10 +148,10 @@ wordcloud = WordCloud(
         colormap='viridis',
 ).generate_from_frequencies(sorted_word_dict)
 
-fig, ax = plt.subplots(figsize=(10, 5))
-ax.imshow(wordcloud, interpolation="bilinear")
-ax.axis("off")
-st.pyplot(fig)
+#fig, ax = plt.subplots(figsize=(10, 5))
+#ax.imshow(wordcloud, interpolation="bilinear")
+#ax.axis("off")
+#st.pyplot(fig)
 
     # แสดงผล Word Cloud
 fig, ax = plt.subplots(figsize=(10, 5))
